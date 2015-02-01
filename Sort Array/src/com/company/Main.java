@@ -3,12 +3,13 @@ package com.company;
 public class Main {
     public static void main(String[] args) {
         //int[] myArray = {7, 1, 17, 50,9,5,11};
-        int[] myArray = {1, 25, 17, 50,9,5,51,90};
+        int[] myArray = {31, 25, 17, 50,9,5,51,90};
         sortMyArray(myArray);
         //System.out.println(printArray(myArray));
     }
 // כתוב מתודה סטטית שתקרא סורט ותקבל מערך של מספרים ותמיין אותו בצורה יעילה מהקטן לגדול
     public static void sortMyArray(int arr[]) {
+        int counter= 0;
         System.out.println("Original Array: " + printArray(arr));
         for (int i = 0; i < arr.length - 1; i++) {
             int min = arr[i];
@@ -22,8 +23,9 @@ public class Main {
                 arr[i - 1] = min;
                 i--;
             }
+            counter++;
         }
-        System.out.println("Sorted Array: "+printArray(arr));
+        System.out.println("Sorted Array: "+printArray(arr)+"  and counter = "+counter);
     }
 
     public static String printArray(int []arr){
